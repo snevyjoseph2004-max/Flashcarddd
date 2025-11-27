@@ -1,32 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
 
+    <!-- QUESTION -->
     <TextView
         android:id="@+id/flashcard_question"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:gravity="center"
-        android:text="Who is the 44th president of the United States? "
-
-        android:textSize="40sp"
-
-        />
-    <TextView
-        android:id="@+id/flashcard_answer"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:text="Barack obama "
-        android:alpha="0.5"
-        android:textSize="40sp"
-                android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Who is the 44th president of the United States?"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:padding="16dp" />
 
-        android:layout_below="@id/flashcard_question"
+    <!-- ANSWERS -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        />
-</RelativeLayout>
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donald Trump" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barack Obama" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joe Biden" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnVerifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vérifier" />
+
+    <TextView
+        android:id="@+id/tvResultat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:gravity="center" />
+
+    <!-- SPACER to push buttons to the bottom -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- NAVIGATION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrevious"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Précédent"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Suivant"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter une question"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>
